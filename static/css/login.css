@@ -1,0 +1,17 @@
+.content {
+	margin: 0 auto;
+	width: 60%;
+	text-align: center;
+	padding-top: 10%;
+}
+h1 {
+	margin: 2% auto;
+}
+img, p {
+	margin: 1% auto;
+}
+#message {
+	display: none;
+	margin: 1% auto;
+	width: 40%;
+}

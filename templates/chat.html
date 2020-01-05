@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="shortcut icon" href="../static/images/icon.png">
+		<title>Flack Chat</title>
+		<script 
+			src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js" 
+			integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I=" 
+			crossorigin="anonymous"></script>
+		<script
+  		src="https://code.jquery.com/jquery-3.4.1.min.js"
+  		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+			crossorigin="anonymous"></script>
+		<script src="../static/javascript/rooms.js"></script>
+		<script src="../static/javascript/message_handler.js"></script>
+		<script src="../static/javascript/chat.js"></script>
+		<script src="../static/javascript/socket.js"></script>
+		<script src="../static/javascript/private_messages.js"></script>
+		<link rel="stylesheet" href="../static/css/reset.css">
+		<link rel="stylesheet" href="../static/css/chat.css">
+
+	</head>
+	<body>
+		<div class="content">
+			<header id="header">
+				<h1>Flack Chat</h1>
+				<p>Username : <span id="username">{{username}}</span><a href="/logout" id="logout">Log out</a></p>
+			</header>
+			<aside id="rooms">
+				<button type="menu" onclick="rooms.switchRooms('system')" id="system">System Messages</button>
+				<h2>Available Rooms</h2>
+				<ul id="channelList"></ul>
+				<h2>Current Rooms</h2>
+				<ul id="currentChannels"></ul>
+				<input type="text" placeholder="Room name..." id="roomBox">
+				<button type="button" data-action="create" id="createButton">Create Room</button>
+				<button type="button" data-action="close" id="closeButton">Close Room</button>
+			</aside>
+			<div id="chatDiv">
+				<article id="system">
+					<h2>System Messages</h2>
+					<div id="chatBox"></div>
+				</article>
+			</div>
+			<div id="message">
+				<form action="">
+					<input type="text" placeholder="Send message..." id="messageBox">
+					<button type="submit" id="sendButton">Send</button>
+				</form>
+				<button type="button" data-action="leave" id="leaveButton">Leave Chat</button>
+			</div>
+			<aside id="users">
+				<h2>Users</h2>
+				<ul id="userList"></ul>
+			</aside>
+		</div>
+  </body>
+</html>
